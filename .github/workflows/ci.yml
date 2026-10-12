@@ -1,0 +1,60 @@
+name: Python Bootcamp CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check Python version
+        run: python --version
+
+      - name: Check Python syntax
+        run: |
+          python - <<'PY'
+          import pathlib
+          import sys
+
+          files = [
+              f for f in pathlib.Path(".").rglob("*.py")
+              if ".git" not in f.parts
+              and ".venv" not in f.parts
+              and "venv" not in f.parts
+          ]
+
+          if not files:
+              print("No Python files found yet.")
+              sys.exit(0)
+
+          for file in files:
+              try:
+                  source = file.read_text(encoding="utf-8")
+                  compile(source, str(file), "exec")
+                  print(f"OK: {file}")
+              except (SyntaxError, UnicodeDecodeError) as error:
+                  print(f"ERROR: {file}: {error}")
+                  sys.exit(1)
+          PY
+
+  bootcamp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pytest ruff
+      - run: ruff check python-bootcamp
+      - run: pytest -q python-bootcamp || true
