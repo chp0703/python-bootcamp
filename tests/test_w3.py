@@ -31,8 +31,8 @@ def test_w3_2_log_stats(load):
 
 def test_w3_3_cli(member):
     ok = subprocess.run([sys.executable, "-m", f"members.{member}.w3.cli", str(BOOTCAMP / "samples" / "tasks.csv"),
-                         "--hours", "2", "--today", "2026-10-26"], capture_output=True, text=True, cwd=BOOTCAMP)
+                         "--hours", "2", "--today", "2026-10-26"], check=False, capture_output=True, text=True, cwd=BOOTCAMP)
     assert ok.returncode == 0 and "Assignment" in ok.stdout
     bad = subprocess.run([sys.executable, "-m", f"members.{member}.w3.cli", "missing.csv", "--hours", "2"],
-                         capture_output=True, text=True, cwd=BOOTCAMP)
+                         check=False, capture_output=True, text=True, cwd=BOOTCAMP)
     assert bad.returncode == 1
