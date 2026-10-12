@@ -6,14 +6,14 @@ Repository này chứa mã nguồn và bài làm tuần 1, 2, 3 của **Nhóm 03
 
 ## 👥 Thành viên nhóm & Phân công công việc
 
-| No. | Member   | GitHub Username          |
-| :-: | :------- | :----------------------- |
-|  1  | Member 1 | `@chp0703`               |
-|  2  | Member 2 | `@AIVIETNAM-AIO-TheHien` |
-|  3  | Member 3 | `@phkhoiit-1508`         |
-|  4  | Member 4 | `@kentlatoi`             |
-|  5  | Member 5 | `@thanhhuong107`         |
-|  6  | Member 6 | `@dmh612`                |
+| No. | Member   | GitHub Username          | STUDENT ID NUMBER |
+| :-: | :------- | :----------------------- | :---------------- |
+|  1  | Member 1 | `@chp0703`               | 25127224          |
+|  2  | Member 2 | `@AIVIETNAM-AIO-TheHien` | 25127327          |
+|  3  | Member 3 | `@phkhoiit-1508`         | 25127390          |
+|  4  | Member 4 | `@kentlatoi`             | 25127369          |
+|  5  | Member 5 | `@thanhhuong107`         | 25127197          |
+|  6  | Member 6 | `@dmh612`                | 25127340          |
 
 ---
 
