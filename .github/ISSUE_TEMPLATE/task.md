@@ -1,7 +1,7 @@
 ---
 name: Python homework
 about: Weekly individual Python exercises
-title: "[Python HW] "
+title: "[Python Homework] Wxx - <github-username>"
 labels: python-hw
 ---
 
