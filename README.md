@@ -44,3 +44,16 @@ python-bootcamp/
 ├── PROGRESS.md             # Bảng theo dõi tiến độ công việc nhóm
 └── README.md               # Tài liệu hướng dẫn dự án
 ```
+
+## Reviewer rotation
+
+Reviewer luân phiên theo vòng sau:
+
+1. Member 1 review Member 2.
+2. Member 2 review Member 3.
+3. Member 3 review Member 4.
+4. Member 4 review Member 5.
+5. Member 5 review Member 6.
+6. Member 6 review Member 1.
+
+Vì vậy, chiều review là Member 1 → Member 2 → Member 3 → Member 4 → Member 5 → Member 6 → Member 1.
