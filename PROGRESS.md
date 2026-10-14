@@ -17,6 +17,6 @@ Tài liệu này theo dõi tiến độ hoàn thành bài tập và các nhiệm
 
 ---
 
-## 📌 Ghi chú & Lịch sử cập nhật
+## Ghi chú & Lịch sử cập nhật
 
 - **Tuần 1:** Tất cả 6 thành viên đã hoàn thành đầy đủ bài tập lập trình Python tuần 1 và tiến hành review chéo theo đúng vòng phân công luân phiên của nhóm.
