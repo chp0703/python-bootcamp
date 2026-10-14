@@ -4,7 +4,7 @@ Repository này chứa mã nguồn và bài làm tuần 1, 2, 3 của **Nhóm 03
 
 ---
 
-## 👥 Thành viên nhóm & Phân công công việc
+## Thành viên nhóm & Phân công công việc
 
 | No. | Member   | GitHub Username          | STUDENT ID NUMBER |
 | :-: | :------- | :----------------------- | :---------------- |
@@ -17,7 +17,7 @@ Repository này chứa mã nguồn và bài làm tuần 1, 2, 3 của **Nhóm 03
 
 ---
 
-## 📁 Cấu trúc thư mục (Repository Structure)
+## Cấu trúc thư mục (Repository Structure)
 
 ```text
 python-bootcamp/
