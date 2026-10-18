@@ -1,0 +1,27 @@
+
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Test coverage
+.coverage
+htmlcov/
+
+# macOS
+.DS_Store
+
+# Local editor settings
+.vscode/
+.idea/
