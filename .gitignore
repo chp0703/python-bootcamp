@@ -1,0 +1,41 @@
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+.venv-*/
+venv/
+env/
+
+# Test caches and coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Linters and formatters
+.ruff_cache/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# IDE settings
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Build and distribution
+build/
+dist/
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
