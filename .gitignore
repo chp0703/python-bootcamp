@@ -1,27 +1,41 @@
-
 # Python bytecode and cache
 __pycache__/
 *.py[cod]
-.pytest_cache/
-.ruff_cache/
+*$py.class
 
-# Python virtual environments
+# Virtual environments
 .venv/
+.venv-*/
 venv/
 env/
+
+# Test caches and coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Linters and formatters
+.ruff_cache/
 
 # Environment variables and secrets
 .env
 .env.*
 !.env.example
 
-# Test coverage
-.coverage
-htmlcov/
-
-# macOS
-.DS_Store
-
-# Local editor settings
+# IDE settings
 .vscode/
 .idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Build and distribution
+build/
+dist/
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
