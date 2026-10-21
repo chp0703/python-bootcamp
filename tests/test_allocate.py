@@ -1,5 +1,7 @@
 from datetime import date
 
+import pytest
+
 from shared.contract import Task
 from shared.study_planner.allocate import allocate
 
@@ -14,3 +16,14 @@ def test_allocate_does_not_exceed_available_hours():
 
     assert [block.hours for block in blocks] == [3.0, 1.0]
     assert sum(block.hours for block in blocks) == 4
+
+
+def test_allocate_with_no_available_hours_returns_no_blocks():
+    task = Task("A", 5, 3.0, date(2026, 10, 30))
+
+    assert allocate([task], 0) == []
+
+
+def test_allocate_rejects_negative_hours():
+    with pytest.raises(ValueError, match="non-negative"):
+        allocate([], -1)
