@@ -4,20 +4,20 @@ Repository này chứa mã nguồn và bài làm tuần 1, 2, 3 của **Nhóm 03
 
 ---
 
-## 👥 Thành viên nhóm & Phân công công việc
+## Thành viên nhóm & Phân công công việc
 
-| No. | Member   | GitHub Username          |
-| :-: | :------- | :----------------------- |
-|  1  | Member 1 | `@chp0703`               |
-|  2  | Member 2 | `@AIVIETNAM-AIO-TheHien` |
-|  3  | Member 3 | `@phkhoiit-1508`         |
-|  4  | Member 4 | `@kentlatoi`             |
-|  5  | Member 5 | `@thanhhuong107`         |
-|  6  | Member 6 | `@dmh612`                |
+| No. | Member   | GitHub Username          | STUDENT ID NUMBER |
+| :-: | :------- | :----------------------- | :---------------- |
+|  1  | Member 1 | `@chp0703`               | 25127224          |
+|  2  | Member 2 | `@AIVIETNAM-AIO-TheHien` | 25127327          |
+|  3  | Member 3 | `@phkhoiit-1508`         | 25127390          |
+|  4  | Member 4 | `@kentlatoi`             | 25127369          |
+|  5  | Member 5 | `@thanhhuong107`         | 25127197          |
+|  6  | Member 6 | `@dmh612`                | 25127340          |
 
 ---
 
-## 📁 Cấu trúc thư mục (Repository Structure)
+## Cấu trúc thư mục (Repository Structure)
 
 ```text
 python-bootcamp/
@@ -44,3 +44,16 @@ python-bootcamp/
 ├── PROGRESS.md             # Bảng theo dõi tiến độ công việc nhóm
 └── README.md               # Tài liệu hướng dẫn dự án
 ```
+
+## Reviewer rotation
+
+Reviewer luân phiên theo vòng sau:
+
+1. Member 1 review Member 2.
+2. Member 2 review Member 3.
+3. Member 3 review Member 4.
+4. Member 4 review Member 5.
+5. Member 5 review Member 6.
+6. Member 6 review Member 1.
+
+Vì vậy, chiều review là Member 1 → Member 2 → Member 3 → Member 4 → Member 5 → Member 6 → Member 1.

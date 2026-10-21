@@ -1,6 +1,12 @@
+from importlib import import_module
+
 import pytest
 
-from members.khoi_ph.w1 import grades, rules, text_tools, timetable, translate
+grades = import_module("members.phkhoiit-1508.w1.grades")
+rules = import_module("members.phkhoiit-1508.w1.rules")
+text_tools = import_module("members.phkhoiit-1508.w1.text_tools")
+timetable = import_module("members.phkhoiit-1508.w1.timetable")
+translate = import_module("members.phkhoiit-1508.w1.translate")
 
 
 def test_summary_handles_odd_count_without_changing_scores():
