@@ -1,7 +1,7 @@
 """W1.4: Bài của member 6 - Merge sorted merge."""
 
 
-def merge_sorted_vectors(v1: list, v2: list) -> list:
+def merge_sorted_vectors(v1: list[int], v2: list[int]) -> list[int]:
     """Merge two already sorted lists/vectors into a single sorted list.
     
     Time Complexity: O(n + m)
