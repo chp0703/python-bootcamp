@@ -6,15 +6,12 @@ from datetime import date
 
 @dataclass
 class Task:
-    """A study task with a deadline and estimated effort."""
-
     title: str
     importance: int
     effort_h: float
     deadline: date
 
     def __post_init__(self) -> None:
-        """Reject importance scores outside the supported 1–5 range."""
         if (
             isinstance(self.importance, bool)
             or not isinstance(self.importance, int)

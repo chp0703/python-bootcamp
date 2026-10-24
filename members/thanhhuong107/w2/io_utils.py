@@ -5,14 +5,16 @@ import json
 from dataclasses import asdict
 from datetime import date
 from pathlib import Path
+from typing import Union
 
 from .models import Task
 
+PathLike = Union[str, Path]
 HEADERS = ["title", "importance", "effort_h", "deadline"]
 
 
-def load_tasks(path: str | Path) -> list[Task]:
-    """Load tasks from CSV, including the source line in malformed-row errors."""
+def load_tasks(path: PathLike) -> list[Task]:
+    """Load tasks from a CSV file, reporting malformed data with its line."""
     tasks: list[Task] = []
     with Path(path).open("r", newline="", encoding="utf-8-sig") as stream:
         reader = csv.DictReader(stream)
@@ -33,23 +35,23 @@ def load_tasks(path: str | Path) -> list[Task]:
                     )
                     if not task.title:
                         raise ValueError("title cannot be empty")
-                    if task.effort_h <= 0:
-                        raise ValueError("effort_h must be greater than 0")
                     tasks.append(task)
                 except (TypeError, ValueError) as exc:
                     raise ValueError(f"line {line}: invalid task row ({exc})") from exc
         except csv.Error as exc:
             raise ValueError(f"line {reader.line_num}: invalid CSV ({exc})") from exc
+
     return tasks
 
 
-def save_json(tasks: list[Task], path: str | Path) -> None:
-    """Save tasks as readable JSON with ISO formatted deadlines."""
+def save_json(tasks: list[Task], path: PathLike) -> None:
+    """Save tasks as readable JSON, with deadlines in ISO date format."""
     records = []
     for task in tasks:
         record = asdict(task)
         record["deadline"] = task.deadline.isoformat()
         records.append(record)
+
     with Path(path).open("w", encoding="utf-8") as stream:
         json.dump(records, stream, indent=2, ensure_ascii=False)
         stream.write("\n")
