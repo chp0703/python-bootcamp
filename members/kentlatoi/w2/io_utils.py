@@ -1,11 +1,13 @@
 import csv
 import json
 from datetime import date
+from pathlib import Path
 
 from members.kentlatoi.w2.models import Task
 
 
-def load_tasks(path) -> list[Task]:
+def load_tasks(path: str | Path) -> list[Task]:
+    """Load tasks from the bootcamp CSV format."""
     tasks = []
 
     with open(path, "r", encoding="utf-8", newline="") as file:
@@ -17,7 +19,7 @@ def load_tasks(path) -> list[Task]:
                     title=row["title"],
                     importance=int(row["importance"]),
                     effort_h=float(row["effort_h"]),
-                    deadline=date.fromisoformat(row["deadline"])
+                    deadline=date.fromisoformat(row["deadline"]),
                 )
 
                 tasks.append(task)
@@ -30,7 +32,8 @@ def load_tasks(path) -> list[Task]:
     return tasks
 
 
-def save_json(tasks: list[Task], path) -> None:
+def save_json(tasks: list[Task], path: str | Path) -> None:
+    """Write tasks as readable JSON with ISO-formatted deadlines."""
     data = []
 
     for task in tasks:
@@ -38,7 +41,7 @@ def save_json(tasks: list[Task], path) -> None:
             "title": task.title,
             "importance": task.importance,
             "effort_h": task.effort_h,
-            "deadline": task.deadline.isoformat()
+            "deadline": task.deadline.isoformat(),
         }
 
         data.append(task_data)

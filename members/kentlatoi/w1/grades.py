@@ -1,4 +1,5 @@
-def summary(scores: list[float]) -> dict:
+def summary(scores: list[float]) -> dict[str, float]:
+    """Return basic grade statistics rounded to two decimal places."""
     if not scores:
         raise ValueError("scores must not be empty")
 
