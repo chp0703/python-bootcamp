@@ -1,4 +1,5 @@
 def summary(scores: list[float]) -> dict[str, float]:
+    """Return rounded minimum, maximum, mean, and median for non-empty scores."""
     if not (scores):
         raise ValueError ("Score must not be empty")
 
