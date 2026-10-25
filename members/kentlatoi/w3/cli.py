@@ -1,6 +1,7 @@
 """Command-line study planner for the personal Week 3 homework."""
 
 import argparse
+import re
 import sys
 from datetime import date
 from pathlib import Path
@@ -13,6 +14,8 @@ from shared.study_planner.render import render
 
 def iso_date(text: str) -> date:
     """Convert an ISO date for argparse with a useful error message."""
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", text):
+        raise argparse.ArgumentTypeError("--today must be YYYY-MM-DD")
     try:
         return date.fromisoformat(text)
     except ValueError as error:
