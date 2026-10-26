@@ -1,13 +1,18 @@
 """Regression tests for Week 3 boundary cases and reproducible CLI output."""
 
+import subprocess
+import sys
 from collections import Counter
 from datetime import date
 from importlib import import_module
+from pathlib import Path
 
 import pytest
 
 dates = import_module("members.AIVIETNAM-AIO-TheHien.w3.dates")
 log_stats = import_module("members.AIVIETNAM-AIO-TheHien.w3.log_stats")
+ROOT = Path(__file__).resolve().parents[3]
+CLI = "members.AIVIETNAM-AIO-TheHien.w3.cli"
 
 
 @pytest.mark.parametrize(
@@ -63,3 +68,58 @@ def test_log_stats_reject_invalid_latencies(latency: float) -> None:
     """Invalid measurements cannot silently corrupt the reported percentile."""
     with pytest.raises(ValueError, match="latency"):
         log_stats.analyse([("fee", latency)])
+
+
+def run_cli(*arguments: str) -> subprocess.CompletedProcess[str]:
+    """Run the public personal CLI in a fresh Python process."""
+    return subprocess.run(
+        [sys.executable, "-m", CLI, *arguments],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        timeout=10,
+        check=False,
+    )
+
+
+def test_cli_allocates_a_partial_plan_in_priority_order() -> None:
+    """A two-hour budget succeeds even though all tasks need 7.5 hours."""
+    result = run_cli("samples/tasks.csv", "--hours", "2", "--today", "2026-10-26")
+    assert result.returncode == 0, result.stderr
+    assert result.stderr == ""
+    assert result.stdout.splitlines() == [
+        "STUDY PLAN", "1. Assignment - 1.5 h", "2. DS exam - 0.5 h", "", "Total: 2.0 h"
+    ]
+
+
+def test_cli_uses_the_supplied_today_for_priority() -> None:
+    """Changing today changes which task receives a limited budget."""
+    result = run_cli("samples/tasks.csv", "--hours", "2", "--today", "2026-10-29")
+    assert result.returncode == 0, result.stderr
+    assert "1. DS exam - 2.0 h" in result.stdout
+    assert "Assignment" not in result.stdout
+
+
+def test_cli_reports_missing_file_without_traceback() -> None:
+    """Missing CSV paths produce a useful error instead of a traceback."""
+    result = run_cli("missing-w3.csv", "--hours", "2")
+    assert result.returncode == 1
+    assert result.stdout == ""
+    assert "missing-w3.csv" in result.stderr
+    assert "Traceback" not in result.stderr
+
+
+@pytest.mark.parametrize("hours", ["-1", "nan", "inf", "many"])
+def test_cli_rejects_invalid_hour_budgets(hours: str) -> None:
+    """argparse rejects invalid budgets before planning."""
+    result = run_cli("samples/tasks.csv", "--hours", hours)
+    assert result.returncode == 2
+    assert "hours" in result.stderr
+
+
+def test_cli_reports_bad_csv_with_its_line_number() -> None:
+    """CSV diagnostics from the personal W2 loader reach the CLI user."""
+    result = run_cli("samples/tasks_bad.csv", "--hours", "2")
+    assert result.returncode == 1
+    assert "line 3" in result.stderr
+    assert "Traceback" not in result.stderr
