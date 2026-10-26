@@ -6,8 +6,8 @@ from pathlib import Path
 
 import pytest
 
-from members.thanhhuong107.w2.errors import InfeasiblePlan, check_feasible
-from members.thanhhuong107.w2.models import Task
+from shared.contract import Task
+from shared.study_planner.errors import InfeasiblePlan, check_feasible
 from shared.study_planner.parse import parse_csv
 
 
