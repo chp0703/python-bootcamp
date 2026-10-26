@@ -1,6 +1,6 @@
 """Feasibility checks and their domain-specific error."""
 
-from typing import Iterable
+from collections.abc import Iterable
 
 from .models import Task
 
@@ -9,11 +9,13 @@ class InfeasiblePlan(Exception):
     """Raised when the planned work exceeds the available study hours."""
 
     def __init__(self, needed_h: float, available_h: float) -> None:
+        """Store the plan totals used to explain the feasibility failure."""
         self.needed_h = needed_h
         self.available_h = available_h
         super().__init__(str(self))
 
     def __str__(self) -> str:
+        """Format the required and available hours for the error message."""
         return (
             f"Plan needs {self.needed_h:g} hours, "
             f"but only {self.available_h:g} hours are available."

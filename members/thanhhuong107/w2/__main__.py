@@ -6,6 +6,7 @@ from .io_utils import load_tasks
 
 
 def main() -> None:
+    """Load the sample tasks and print each task to standard output."""
     sample_csv = Path(__file__).resolve().parents[3] / "samples" / "tasks.csv"
     for task in load_tasks(sample_csv):
         print(task)

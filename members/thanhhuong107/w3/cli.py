@@ -1,9 +1,9 @@
 """Command-line study planner for a CSV task list."""
 
 import argparse
+from collections.abc import Sequence
 from datetime import date
 from pathlib import Path
-from typing import Sequence
 
 from members.thanhhuong107.w2.io_utils import load_tasks
 from members.thanhhuong107.w2.models import Task
