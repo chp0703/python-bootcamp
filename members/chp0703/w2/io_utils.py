@@ -1,9 +1,13 @@
 import csv
 import json
 from datetime import date
+from pathlib import Path
+
 from .models import Task
 
-def load_tasks(path) -> list[Task]:
+
+def load_tasks(path: str | Path) -> list[Task]:
+    """Load valid task rows from a CSV file."""
     tasks = []
 
     with open(path, "r" , newline = "", encoding= "utf-8-sig") as file:
@@ -35,7 +39,8 @@ def load_tasks(path) -> list[Task]:
     return tasks
 
 
-def save_json(tasks: list[Task], path) -> None:
+def save_json(tasks: list[Task], path: str | Path) -> None:
+    """Serialize tasks to a UTF-8 JSON file."""
     data = []
 
     for task in tasks:
