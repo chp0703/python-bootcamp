@@ -18,7 +18,8 @@ Codex generated the due-date parser, route-latency analysis, CLI adapter from th
 - p95 uses the nearest-rank convention; an empty log has no slowest route, and ties preserve first-seen route order.
 - The CLI reuses the personal W2 CSV loader and reports its line-number errors. It allocates a partial plan rather than requiring all task effort to fit in the available hours.
 - Official W1-W3 tests, personal W3 edge tests, and W2 cross-tests: **51 passed**.
-- Repository regression: **70 passed, 11 skipped**. The skipped instructor cases require `--member` and are exercised in the dedicated personal run.
+- Repository regression after syncing `main`: **110 passed, 7 failed, 11 skipped**. The failures are existing shared CLI error scenarios (invalid numeric hours, missing paths, directory input, and empty files) in `tests/test_tw3_cli.py`. The skipped instructor cases require `--member` and are exercised in the dedicated personal run.
+- Personal edge tests use a unique filename and a namespace package to avoid pytest module collisions across member folders.
 - Ruff lint and formatting checks passed. All personal functions have annotations and docstrings.
 
 The author still needs to review the retained code and be able to explain each line during the individual defense. Peer review and merging are recorded separately on the pull request.

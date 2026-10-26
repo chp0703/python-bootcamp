@@ -1,4 +1,4 @@
-"""Regression tests for Week 3 boundary cases and reproducible CLI output."""
+"""Member 2 regression tests for Week 3 boundaries and reproducible CLI output."""
 
 import subprocess
 import sys
