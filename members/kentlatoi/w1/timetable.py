@@ -1,4 +1,5 @@
 def by_day(items: list[tuple[str, str]]) -> dict[str, list[str]]:
+    """Group course names by weekday and sort each day's courses."""
     result = {}
 
     for course, day in items:
@@ -7,7 +8,7 @@ def by_day(items: list[tuple[str, str]]) -> dict[str, list[str]]:
 
         result[day].append(course)
 
-    for day in result:
-        result[day].sort()
+    for courses in result.values():
+        courses.sort()
 
     return result

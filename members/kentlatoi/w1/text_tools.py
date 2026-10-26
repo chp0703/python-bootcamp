@@ -1,4 +1,5 @@
-def word_count(text: str) -> dict:
+def word_count(text: str) -> dict[str, int]:
+    """Count words without case or common punctuation distinctions."""
     punc = ".,!?;:"
 
     for char in punc:
@@ -12,12 +13,13 @@ def word_count(text: str) -> dict:
 
     return counts
 
-def top_k(text: str, k: int) -> list:
+def top_k(text: str, k: int) -> list[tuple[str, int]]:
+    """Return the most common words, breaking ties alphabetically."""
     counts = word_count(text)
 
-    sortedWords = sorted(
+    sorted_words = sorted(
         counts.items(),
-        key=lambda item: (-item[1], item[0])
+        key=lambda item: (-item[1], item[0]),
     )
 
-    return sortedWords[:k]
+    return sorted_words[:k]
