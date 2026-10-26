@@ -89,11 +89,12 @@ From the repository root, after installing `requirements.txt`:
 
 ```bash
 python -m pytest -q tests/test_tw3_cli.py
+python -m pytest -q tests/test_tw3_e2e.py
 python -m pytest -q
 python -m ruff check shared/study_planner tests/test_tw3_cli.py
 ```
 
-See [the team demo](../../docs/tw3_demo.md) for the results observed on `main` at `3964a1e` and the pending end-to-end and error-test integrations.
+See [the team demo](../../docs/tw3_demo.md) for the results observed on `main` at `304b443` and the remaining error-test integration.
 
 ## Known limitations and errors
 
