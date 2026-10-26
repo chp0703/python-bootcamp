@@ -35,8 +35,10 @@ Codex generated `tests/test_tw3_e2e.py`, its strict CI steps, and the issue/PR t
 
 Focused tests: **3 passed**. Ruff lint and formatting checks passed. After incorporating merged PR #69, the teamwork branch's full suite has **113 passed, 7 failed, 11 skipped**; failures are shared CLI error scenarios tracked by the team's separate integration work. The combined personal and E2E checks have **54 passed**. Documentation for both Member 2 contributions is kept together here while their code is delivered in separate pull requests.
 
-## 2026-10-26 - Member 4, T-W3 documentation and demo
+## 2026-10-26 - Member 4, T-W3 Documentation and Demo
 
-- Author: Nguyễn Trần Minh Khang (`@kentlatoi`).
-- Tool: OpenAI Codex.
-- Scope: Drafted the shared Study Planner usage guide and reproducible demo for [Issue #65](https://github.com/chp0703/python-bootcamp/issues/65). Codex checked the integrated source, ran the sample commands, pytest, and Ruff, and recorded both passing behavior and existing failures. No shared implementation or tests were changed.
+- **Author:** Nguyễn Trần Minh Khang (`@kentlatoi`).
+- **Tool:** OpenAI Codex.
+- **Student contribution:** Reviewed and refined the Study Planner documentation and demo.
+- **AI assistance:** Helped understand the project structure, review the documentation, suggest improvements, and check test results. No shared implementation or tests were modified.
+- **Issue:** [#65](https://github.com/chp0703/python-bootcamp/issues/65).
