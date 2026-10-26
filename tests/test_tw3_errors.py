@@ -1,8 +1,8 @@
 """Error-path tests for the shared Week 3 study planner."""
 
+import re
 from datetime import date
 from pathlib import Path
-import re
 
 import pytest
 
