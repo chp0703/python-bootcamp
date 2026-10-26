@@ -56,5 +56,9 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install pytest ruff
+      - name: Lint study planner end-to-end tests
+        run: python -m ruff check tests/test_tw3_e2e.py
+      - name: Test study planner end to end
+        run: python -m pytest -q tests/test_tw3_e2e.py
       - run: ruff check . || true
       - run: pytest -q || true
