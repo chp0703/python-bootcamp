@@ -14,7 +14,7 @@ from shared.study_planner.parse import parse_csv
 def test_missing_csv_reports_the_missing_path(tmp_path: Path) -> None:
     missing_csv = tmp_path / "missing-tasks.csv"
 
-    with pytest.raises(FileNotFoundError, match=re.escape(missing_csv.name)):
+    with pytest.raises(FileNotFoundError, match=re.escape(str(missing_csv))):
         parse_csv(missing_csv)
 
 
