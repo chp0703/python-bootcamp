@@ -2,7 +2,7 @@
 import statistics
 
 
-def summary(scores: list[float]) -> dict:
+def summary(scores: list[float]) -> dict[str, float]:
     """Calculate min, max, mean, and median of scores.
     
     Raises:
