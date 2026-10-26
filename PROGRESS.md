@@ -94,7 +94,7 @@ This document tracks individual homework, team assignments, peer reviews, and ve
 
 | Member | Issue | PR | Reviewer | Implementation | Review and merge |
 |---|---|---|---|---|---|
-| Huỳnh Nguyễn Thế Hiển (@AIVIETNAM-AIO-TheHien) | [#68](https://github.com/chp0703/python-bootcamp/issues/68) | [#69](https://github.com/chp0703/python-bootcamp/pull/69) | @chp0703 | W3-1 to W3-4 implemented and tested | Pending |
+| Huỳnh Nguyễn Thế Hiển (@AIVIETNAM-AIO-TheHien) | [#68](https://github.com/chp0703/python-bootcamp/issues/68) | [#69](https://github.com/chp0703/python-bootcamp/pull/69) | @chp0703 | W3-1 to W3-4 implemented and tested | Merged by @chp0703 on 2026-10-26 |
 
 - Branch: `py/w3-AIVIETNAM-AIO-TheHien`.
 - Official W1-W3 tests, W3 edge cases, and W2 cross-tests: **51 passed** with `--member AIVIETNAM-AIO-TheHien --variant 2`.
@@ -106,3 +106,13 @@ This document tracks individual homework, team assignments, peer reviews, and ve
 - AI assistance is recorded in [docs/ai-use-log.md](docs/ai-use-log.md).
 - Estimated hours: not recorded. Actual hours: not recorded.
 - Teamwork end-to-end tests are tracked separately. This entry does not mark the whole team or `py-w3-done` complete.
+
+### Member 2 T-W3 end-to-end contribution
+
+- Issue: [#70](https://github.com/chp0703/python-bootcamp/issues/70).
+- Pull request: [#71](https://github.com/chp0703/python-bootcamp/pull/71), reviewer `@chp0703`; review and merge pending.
+- Branch: `feat/tw3-e2e-AIVIETNAM-AIO-TheHien`.
+- Delivery: `tests/test_tw3_e2e.py` and strict E2E/lint CI steps, in the separate teamwork PR.
+- Focused validation: **3 passed**, Ruff lint and formatting checks passed.
+- Teamwork branch regression after incorporating merged PR #69: **113 passed, 7 failed, 11 skipped**. The seven failures are the shared CLI error-path cases already listed above.
+- The three success scenarios cover partial/full sample plans and quoted Unicode CSV with fractional allocation.
