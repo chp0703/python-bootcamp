@@ -12,6 +12,7 @@ class Task:
     deadline: date
 
     def __post_init__(self) -> None:
+        """Reject task importance values outside the supported 1–5 range."""
         if (
             isinstance(self.importance, bool)
             or not isinstance(self.importance, int)

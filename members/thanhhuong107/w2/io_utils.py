@@ -5,11 +5,10 @@ import json
 from dataclasses import asdict
 from datetime import date
 from pathlib import Path
-from typing import Union
 
 from .models import Task
 
-PathLike = Union[str, Path]
+PathLike = str | Path
 HEADERS = ["title", "importance", "effort_h", "deadline"]
 
 
