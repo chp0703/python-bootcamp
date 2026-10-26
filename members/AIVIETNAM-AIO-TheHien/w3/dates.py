@@ -4,7 +4,13 @@ import re
 from datetime import date, timedelta
 
 WEEKDAYS = (
-    "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
+    "sunday",
 )
 
 

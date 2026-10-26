@@ -31,7 +31,9 @@ def test_due_dates_cross_boundaries(text: str, today: date, expected: date) -> N
     assert dates.parse_due(text, today) == expected
 
 
-@pytest.mark.parametrize("text", ["", "someday", "2026-02-29", "in -1 days", "20261030"])
+@pytest.mark.parametrize(
+    "text", ["", "someday", "2026-02-29", "in -1 days", "20261030"]
+)
 def test_due_dates_reject_unknown_or_invalid_text(text: str) -> None:
     """Invalid inputs consistently report ValueError."""
     with pytest.raises(ValueError):
@@ -88,7 +90,11 @@ def test_cli_allocates_a_partial_plan_in_priority_order() -> None:
     assert result.returncode == 0, result.stderr
     assert result.stderr == ""
     assert result.stdout.splitlines() == [
-        "STUDY PLAN", "1. Assignment - 1.5 h", "2. DS exam - 0.5 h", "", "Total: 2.0 h"
+        "STUDY PLAN",
+        "1. Assignment - 1.5 h",
+        "2. DS exam - 0.5 h",
+        "",
+        "Total: 2.0 h",
     ]
 
 
