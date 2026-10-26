@@ -23,3 +23,14 @@ Codex generated the due-date parser, route-latency analysis, CLI adapter from th
 - Ruff lint and formatting checks passed. All personal functions have annotations and docstrings.
 
 The author still needs to review the retained code and be able to explain each line during the individual defense. Peer review and merging are recorded separately on the pull request.
+
+## 2026-10-26 - Member 2, T-W3 end-to-end tests
+
+- Tool: OpenAI Codex.
+- Issue: [#70](https://github.com/chp0703/python-bootcamp/issues/70).
+- Pull request: [#71](https://github.com/chp0703/python-bootcamp/pull/71).
+- Code is isolated on `feat/tw3-e2e-AIVIETNAM-AIO-TheHien`.
+
+Codex generated `tests/test_tw3_e2e.py`, its strict CI steps, and the issue/PR text. The tests run the real shared CLI with a fixed date and no mocked pipeline functions. They verify partial and full sample plans, quoted/Unicode CSV titles, paths with spaces, priority ordering, fractional blocks, and rendered totals.
+
+Focused tests: **3 passed**. Ruff lint and formatting checks passed. The teamwork branch's full suite has **88 passed, 7 failed, 11 skipped**; failures are shared CLI error scenarios tracked by the team's separate integration work. Documentation for both Member 2 contributions is kept together here while their code remains in separate pull requests.

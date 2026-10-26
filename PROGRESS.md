@@ -106,3 +106,13 @@ This document tracks individual homework, team assignments, peer reviews, and ve
 - AI assistance is recorded in [docs/ai-use-log.md](docs/ai-use-log.md).
 - Estimated hours: not recorded. Actual hours: not recorded.
 - Teamwork end-to-end tests are tracked separately. This entry does not mark the whole team or `py-w3-done` complete.
+
+### Member 2 T-W3 end-to-end contribution
+
+- Issue: [#70](https://github.com/chp0703/python-bootcamp/issues/70).
+- Pull request: [#71](https://github.com/chp0703/python-bootcamp/pull/71), reviewer `@chp0703`; review and merge pending.
+- Branch: `feat/tw3-e2e-AIVIETNAM-AIO-TheHien`.
+- Delivery: `tests/test_tw3_e2e.py` and strict E2E/lint CI steps, in the separate teamwork PR.
+- Focused validation: **3 passed**, Ruff lint and formatting checks passed.
+- Teamwork branch regression: **88 passed, 7 failed, 11 skipped**. The seven failures are the shared CLI error-path cases already listed above.
+- The three success scenarios cover partial/full sample plans and quoted Unicode CSV with fractional allocation.
