@@ -1,4 +1,8 @@
-def summary(scores: list[float]) -> dict:
+"""Compute descriptive statistics for non-empty score lists."""
+
+
+def summary(scores: list[float]) -> dict[str, float]:
+    """Return minimum, maximum, mean, and median rounded to two decimals."""
     if not scores:
         raise ValueError("scores must not be empty")
 

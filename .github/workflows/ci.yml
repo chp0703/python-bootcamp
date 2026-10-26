@@ -58,3 +58,14 @@ jobs:
       - run: pip install pytest ruff
       - run: ruff check . || true
       - run: pytest -q || true
+      - name: Lint Member 2 homework
+        if: ${{ hashFiles('members/AIVIETNAM-AIO-TheHien/w3/cli.py') != '' }}
+        run: python -m ruff check members/AIVIETNAM-AIO-TheHien
+      - name: Test Member 2 homework
+        if: ${{ hashFiles('members/AIVIETNAM-AIO-TheHien/w3/cli.py') != '' }}
+        run: >-
+          python -m pytest -q
+          tests/test_w1.py tests/test_w2.py tests/test_w3.py
+          members/AIVIETNAM-AIO-TheHien/w3/test_hien_w3_edges.py
+          members/AIVIETNAM-AIO-TheHien/w2/tests_for_reviewee.py
+          --member AIVIETNAM-AIO-TheHien --variant 2
