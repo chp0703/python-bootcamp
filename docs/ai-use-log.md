@@ -23,3 +23,9 @@ Codex generated the due-date parser, route-latency analysis, CLI adapter from th
 - Ruff lint and formatting checks passed. All personal functions have annotations and docstrings.
 
 The author still needs to review the retained code and be able to explain each line during the individual defense. Peer review and merging are recorded separately on the pull request.
+
+## 2026-10-26 - Member 4, T-W3 documentation and demo
+
+- Author: Nguyễn Trần Minh Khang (`@kentlatoi`).
+- Tool: OpenAI Codex.
+- Scope: Drafted the shared Study Planner usage guide and reproducible demo for [Issue #65](https://github.com/chp0703/python-bootcamp/issues/65). Codex checked the integrated source, ran the sample commands, pytest, and Ruff, and recorded both passing behavior and existing failures. No shared implementation or tests were changed.
