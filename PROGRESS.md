@@ -89,6 +89,3 @@ This document tracks individual homework, team assignments, peer reviews, and ve
 
 - **Week 1:** All six members completed their individual homework and peer reviews.
 - **Week 2:** Individual homework and collaborative study-planner development completed.
-
-- Estimated hours: not recorded. Actual hours: not recorded.
-- Teamwork end-to-end tests are tracked separately. This entry does not mark the whole team or `py-w3-done` complete.
