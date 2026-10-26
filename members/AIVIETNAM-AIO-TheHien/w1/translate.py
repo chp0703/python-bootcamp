@@ -1,5 +1,8 @@
-def insertion_sort(values: list) -> list:
-    """Python sửa trực tiếp list mà không cần tham số tham chiếu & như C++."""
+"""Translate the insertion-sort exercise into Python."""
+
+
+def insertion_sort(values: list[float]) -> list[float]:
+    """Sort values in place and return the same list, without C++ references."""
     for index in range(1, len(values)):
         current = values[index]
         position = index - 1
