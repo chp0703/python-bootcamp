@@ -90,19 +90,5 @@ This document tracks individual homework, team assignments, peer reviews, and ve
 - **Week 1:** All six members completed their individual homework and peer reviews.
 - **Week 2:** Individual homework and collaborative study-planner development completed.
 
-## 8. Week 3 - Member 2 individual homework
-
-| Member | Issue | PR | Reviewer | Implementation | Review and merge |
-|---|---|---|---|---|---|
-| Huỳnh Nguyễn Thế Hiển (@AIVIETNAM-AIO-TheHien) | [#68](https://github.com/chp0703/python-bootcamp/issues/68) | [#69](https://github.com/chp0703/python-bootcamp/pull/69) | @chp0703 | W3-1 to W3-4 implemented and tested | Pending |
-
-- Branch: `py/w3-AIVIETNAM-AIO-TheHien`.
-- Official W1-W3 tests, W3 edge cases, and W2 cross-tests: **51 passed** with `--member AIVIETNAM-AIO-TheHien --variant 2`.
-- Repository regression after syncing `main`: **110 passed, 7 failed, 11 skipped**. The failures are shared CLI error-path tests in `tests/test_tw3_cli.py`; instructor tests require member selection and pass in the dedicated personal run.
-- Ruff lint and formatting checks pass for this member's W1-W3 code.
-- Strict CI steps explicitly run this member's tests with the correct variant; see PR #69 for the latest CI status.
-- W3-3 reuses the personal W2 CSV loader/model and the shared planning functions, allowing partial plans within the given budget.
-- Personal edge tests use a unique filename and a namespace package to avoid pytest collisions with other members' `w3` packages.
-- AI assistance is recorded in [docs/ai-use-log.md](docs/ai-use-log.md).
 - Estimated hours: not recorded. Actual hours: not recorded.
 - Teamwork end-to-end tests are tracked separately. This entry does not mark the whole team or `py-w3-done` complete.
