@@ -1,15 +1,17 @@
 """Command-line entry point for the study planner."""
 
 import argparse
+import sys
 from datetime import date
 
 from .allocate import allocate
 from .parse import parse_csv
 from .prioritise import prioritise
 from .render import render
+from .validate import validate_inputs
 
 
-def main() -> None:
+def main() -> int:
     """Build and print a study plan from a task CSV file."""
     parser = argparse.ArgumentParser(
         description="Create a study plan from a CSV task list."
@@ -30,11 +32,18 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    tasks = parse_csv(args.csv_path)
-    prioritised_tasks = prioritise(tasks, args.today)
-    blocks = allocate(prioritised_tasks, args.hours)
+    try:
+        tasks = parse_csv(args.csv_path)
+        validate_inputs(tasks, args.hours)
+        prioritised_tasks = prioritise(tasks, args.today)
+        blocks = allocate(prioritised_tasks, args.hours)
+    except (OSError, ValueError) as error:
+        print(f"Error: {error}", file=sys.stderr)
+        return 1
+
     print(render(blocks))
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
